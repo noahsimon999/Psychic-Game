@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #lettersGuessed {
+        background-color: blue;
+        color: white;
+        height: 150px;
+        font-size: 100px;
+        margin: auto;
+        padding-top: 25px;
+    }
+    
+    
+    
+    
+    
+    </style>
+</head>
+<body>
+    <h1>The Psychic Game</h1>
+    <p>Guess what letter I am thinking of, press any letter to begin!</p>
+    
+    <div id="wins"></div>
+    <div id="losses"></div>
+    <div id="guesses"></div>
+    <div id="lettersGuessed"></div> 
+    <script>
+    
+    // score 
+    //     wins 
+    //     loses 
+
+    //Score 
+
+    var wins = 0;
+    var losses = 0;
+    
+    // Game play limit and counter
+    //     guesses left 
+    //     guesses made 
+    
+    var guesses = 9;
+    var userArray = [];
+
+
+    // Game
+    //     computer guess
+
+    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+    "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+
+    var compChoice = letters[Math.round(Math.random() * letters.length)]
+    console.log(compChoice);
+
+
+    //     Check if user input = computer guess
+    //     +1 to win or loses
+    //     -1 to guesses, if guesses equal zero display game over
+    //     display guesses 
+
+    
+    
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === compChoice) {
+        wins++;
+        userArray.push("~WINNER!!!~");
+        } else {
+        guesses--;
+        }
+        
+        if (guesses === 0){
+        losses++, 
+        guesses = 9;
+        userArray = [];      
+        }
+   
+
+    userArray.push(event.key); 
+    console.log(event);
+     
+    document.getElementById("wins").innerHTML = "Wins: " + wins;
+    document.getElementById("losses").innerHTML = "losses: " + losses;
+    document.getElementById("guesses").innerHTML = "Guesses left: " + guesses;
+    document.getElementById("lettersGuessed").innerHTML = userArray;
+    
+
+    })
+
+
+
+    
+    
+    </script>
+</body>
+</html>
