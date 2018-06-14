@@ -1,0 +1,53 @@
+
+body {
+    background-image: url("../images/flying stars.gif");
+}
+
+h1 {
+    color: white;
+    font-size: 20em;
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    color: white;
+    font-size: 5em;
+}
+
+#guesses {
+    background-color: white;
+    color: black;
+    height: 150px;
+    width: 150px;
+    font-size: 2em;
+    margin: auto;
+    float: left;
+
+
+}
+
+#wins, #losses {
+    background-color: white;
+    color: black;
+    height: 75px;
+    width: 100%;
+    font-size: 2em;
+}
+
+#lettersGuessed {
+    background-color: #FF0000;
+    color: white;
+    height: 125px;
+    font-size: 100px;
+    float: left;
+    margin: auto;
+    padding-top: 25px;
+    padding-right: 25px;
+}
+
+#gameUI {
+    
+}

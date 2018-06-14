@@ -4,140 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-    body {
-        background-image: url("assets/images/flying stars.gif");
-    }
-
-    h1 {
-        color: white;
-        font-size: 20em;
-    }
-
-    p {
-        color: white;
-        font-size: 5em;
-    }
-    #guesses {
-        background-color: white;
-        color: black;
-        height: 150px;
-        width: 150px;
-        font-size: 2em;
-        margin: auto;
-        float: left;
-
-
-    }
-    
-    #wins, #losses {
-        background-color: darkgrey;
-        color: white;
-        height: 75px;
-        width: 100%;
-        font-size: 2em;
-    }
-    
-    
-    
-    #lettersGuessed {
-        background-color: #FF0000;
-        color: white;
-        height: 125px;
-        font-size: 100px;
-        float: left;
-        margin: auto;
-        padding-top: 25px;
-        padding-right: 25px;
-    }
-    
-    
-    
-    
-    
-    </style>
+    <title>The Psychic Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> 
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
     <h1>The Psychic Game</h1>
+    <h3>Copyright &copy;</h3>
     <p>Guess what letter I am thinking of, press any letter to begin!</p>
-    
-    <div id="wins"></div>
-    <div id="losses"></div>
-    <div id="guesses"> Guesses: </div>
-    <div id="lettersGuessed"></div> 
-    <script>
-    
-    // score 
-    //     wins 
-    //     loses 
-
-    //Score 
-
-    var wins = 0;
-    var losses = 0;
-    
-    // Game play limit and counter
-    //     guesses left 
-    //     guesses made 
-    
-    var guesses = 9;
-    var userArray = [];
-
-
-    // Game
-    //     computer guess
-
-    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-    "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-
-    var compChoice = letters[Math.round(Math.random() * letters.length)]
-    console.log(compChoice);
-
-
-    //     Check if user input = computer guess
-    //     +1 to win or loses
-    //     -1 to guesses, if guesses equal zero display game over
-    //     display guesses 
-
+    <section class="slideUp">
+        <div id="wins"></div>
+        <div id="losses"></div>
+        <div id="guesses"> Guesses: </div>
+        <div id="lettersGuessed"></div>
+    </section>
+    <script src="assets/javascript/game.js"></script>
     
     
-
-    document.addEventListener('keydown', function (event) {
-        if (event.key === compChoice) {
-        wins++;
-        userArray.push("~WINNER!!!~");
-        compChoice = letters[Math.round(Math.random() * letters.length)];
-        console.log(compChoice);
-        } else {
-        guesses--;
-        }
-        
-        if (guesses === 0){
-        losses++, 
-        guesses = 9;
-        userArray = [];
-        compChoice = letters[Math.round(Math.random() * letters.length)];       
-        console.log(compChoice);
-        }
-   
-
-    userArray.push(event.key); 
-    console.log(event);
-     
-    document.getElementById("wins").innerHTML = "Wins: " + wins;
-    document.getElementById("losses").innerHTML = "losses: " + losses;
-    document.getElementById("guesses").innerHTML = "Guesses left: " + guesses;
-    document.getElementById("lettersGuessed").innerHTML = userArray;
-    
-
-    })
-
-
-
-    
-    
-    </script>
 </body>
 </html>
