@@ -6,11 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    #lettersGuessed {
-        background-color: blue;
+    body {
+        background-image: url("assets/images/flying stars.gif");
+    }
+
+    h1 {
         color: white;
+        font-size: 20em;
+    }
+
+    p {
+        color: white;
+    }
+    #guesses {
+        background-color: white;
+        color: black;
         height: 150px;
+        width: 150px;
+        font-size: 2em;
+        margin: auto;
+        float: left;
+
+
+    }
+    
+    #wins #losses {
+        background-color: green;
+        color: white;
+        height: 75px;
+        width: 100%;
+
+    }
+    
+    
+    
+    #lettersGuessed {
+        background-color: #FF0000;
+        color: white;
+        height: 125px;
         font-size: 100px;
+        float: left;
         margin: auto;
         padding-top: 25px;
     }
@@ -27,7 +62,7 @@
     
     <div id="wins"></div>
     <div id="losses"></div>
-    <div id="guesses"></div>
+    <div id="guesses"> Guesses: </div>
     <div id="lettersGuessed"></div> 
     <script>
     
@@ -71,6 +106,8 @@
         if (event.key === compChoice) {
         wins++;
         userArray.push("~WINNER!!!~");
+        compChoice = letters[Math.round(Math.random() * letters.length)];
+        console.log(compChoice);
         } else {
         guesses--;
         }
@@ -78,7 +115,9 @@
         if (guesses === 0){
         losses++, 
         guesses = 9;
-        userArray = [];      
+        userArray = [];
+        compChoice = letters[Math.round(Math.random() * letters.length)];       
+        console.log(compChoice);
         }
    
 
