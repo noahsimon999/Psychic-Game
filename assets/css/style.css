@@ -48,6 +48,41 @@ p {
     padding-right: 25px;
 }
 
-#gameUI {
-    
+
+
+
+@media only screen and (max-width: 980px) {
+    h1 {
+        font-size: 10em;
+    }
+    #gameArea {
+        width: 550px;
+        height: 385px;
+        position: fixed;
+        margin: auto;
+        top: 35%;
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #gameArea {
+        width: 550px;
+        height: 385px;
+        position: fixed;
+        margin: auto;
+        top: 35%;
+        left: 8%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    #gameArea {
+        width: 300px;
+        height: 450px;
+        position: fixed;
+        margin: auto;
+        top: 35%;
+    }
 }
